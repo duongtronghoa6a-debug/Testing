@@ -50,7 +50,7 @@
 | **Mức độ** | Nghiêm trọng |
 | **Hậu quả** | Sập ~8.5 triệu thiết bị Windows toàn cầu (<1% tổng số máy Windows, theo Microsoft). Hủy 5.000+ chuyến bay, gián đoạn trung tâm cấp cứu 911, lịch phẫu thuật bệnh viện, hoạt động tài chính. Cần can thiệp thủ công trong Safe Mode để sửa. |
 | **Giải pháp** | CrowdStrike thu hồi Channel File 291 lúc 05:27 UTC. Phân phối hướng dẫn khôi phục thủ công và USB boot. Cải tổ quy trình phát hành với kiểm tra tham số nghiêm ngặt, triển khai canary, cho phép khách hàng kiểm soát lịch cập nhật. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** – Hỏi AI giải thích sự cố này, tìm 1 điểm AI trả lời sai. *Gợi ý:* AI hay nói sai con số thiết bị bị ảnh hưởng hoặc nhầm ai là nguồn công bố (Microsoft chứ không phải CrowdStrike). |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Bias (Thiên vị):** AI giải thích lỗi tập trung hoàn toàn vào kỹ thuật Kernel của Windows (con trỏ bộ nhớ, BSOD) mà phớt lờ nguyên nhân gốc rễ là sự cẩu thả trong quy trình QA/QC (thiếu Content Validator) của CrowdStrike.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 1 tại đây]` |
 
 ---
 
@@ -64,7 +64,7 @@
 | **Mức độ** | Nghiêm trọng (CVSS 10.0) |
 | **Hậu quả** | Đe dọa hạ tầng internet toàn cầu. Được phát hiện tình cờ bởi kỹ sư Microsoft Andres Freund khi điều tra độ trễ CPU 500ms trong Debian Sid, trước khi phiên bản lỗi đến được các bản phân phối Linux doanh nghiệp. |
 | **Giải pháp** | Các bản phân phối bị ảnh hưởng (Fedora Rawhide/40, Debian testing/unstable) rollback về xz 5.4.x. Maintainer độc hại bị tước quyền, repository được kiểm tra và xây dựng lại. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Hallucination (Ảo giác):** AI khẳng định *"Kẻ tấn công không đẩy mã độc trực tiếp vào nhánh Git chính thức... mà chỉ nhúng vào các tệp tarball"*. Điều này là **sai sự thật**. Mã độc dạng nhị phân đã được ngụy trang thành các file test (`bad-3-corrupt_lzma2.xz`) và được commit *trực tiếp* vào public Git repository.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 2 tại đây]` |
 
 ---
 
@@ -78,7 +78,7 @@
 | **Mức độ** | Nghiêm trọng (CVSS 9.8) |
 | **Hậu quả** | Bị khai thác hàng loạt bởi nhóm ransomware Cl0p (TA505). 2.773+ tổ chức bị xâm phạm, dữ liệu cá nhân của 90-95 triệu người bị lộ (theo Emsisoft). Nạn nhân: cơ quan liên bang Mỹ, Shell, BBC, British Airways. |
 | **Giải pháp** | Progress phát hành bản vá 31/05/2023. Hướng dẫn tắt HTTP/HTTPS, kiểm tra web root, thu hồi tài khoản database, nâng cấp lên bản vá. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Hallucination (Ảo giác):** AI gán ghép rằng payload độc hại nằm ở header `X-siLock-Comment`. Thực tế, vector SQLi ban đầu chủ yếu khai thác logic định tuyến ẩn của `moveitisapi.dll` và header `X-siLock-Transaction`, không phải comment.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 3 tại đây]` |
 
 ---
 
@@ -92,7 +92,7 @@
 | **Mức độ** | Cao (CVSS 8.8 theo NVD chính thức). *Lưu ý: CVE trùng lặp CVE-2023-5129 từng được đánh giá 10.0 nhưng đã bị MITRE từ chối.* |
 | **Hậu quả** | Ảnh hưởng gần như toàn bộ hệ sinh thái internet: Chrome, Firefox, Safari, Edge, Android, và tất cả ứng dụng Electron (Slack, Discord, Signal, Teams, 1Password). Bị khai thác zero-day trước khi công bố. |
 | **Giải pháp** | Google vá libwebp 1.3.2. Các trình duyệt và hệ điều hành đồng loạt phát hành cập nhật bảo mật khẩn cấp. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** – *Gợi ý: AI thường nói CVSS 10.0 nhưng thực tế NVD chính thức ghi 8.8.* |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Hallucination (Ảo giác):** AI gộp chung và nhầm lẫn 2 lỗ hổng bằng câu: *"nhầm lẫn là lỗi riêng của Google Chrome (CVE-2023-5217/CVE-2023-4863)"*. Thực tế, CVE-2023-5217 là một lỗ hổng hoàn toàn khác nằm ở thư viện **libvpx** (vp8 encoding), không liên quan đến cấu trúc mã của libwebp (CVE-2023-4863).<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 4 tại đây]` |
 
 ---
 
@@ -106,7 +106,7 @@
 | **Mức độ** | Nghiêm trọng (CVSS 9.4) |
 | **Hậu quả** | Kẻ tấn công dùng cookie bị rò rỉ để chiếm phiên doanh nghiệp, vượt qua mật khẩu và MFA. Bị khai thác bởi LockBit 3.0 và APT nhà nước chống lại Boeing và các tổ chức tài chính. |
 | **Giải pháp** | Citrix phát hành cập nhật firmware 10/10/2023. Quản trị viên phải chạy lệnh CLI để hủy tất cả phiên đang hoạt động vì token đã bị đánh cắp vẫn còn hiệu lực sau khi vá. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Hallucination (Ảo giác):** AI giải thích lỗi là do *"Lập trình viên không kiểm tra giá trị trả về của hàm snprintf"*. Thực tế, lỗi xảy ra do logic cấp phát buffer của Citrix khi xử lý HTTP Host header tính toán sai độ lệch padding, dẫn đến đọc quá biên (out-of-bounds read) chứ không phải do lỗi của hàm chuẩn `snprintf`.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 5 tại đây]` |
 
 ---
 
@@ -120,7 +120,7 @@
 | **Mức độ** | Nghiêm trọng (CVSS 9.8) |
 | **Hậu quả** | Thực thi mã từ xa không cần xác thực trên ứng dụng Java doanh nghiệp chạy Spring MVC/WebFlux trên Tomcat. Được thêm vào danh sách KEV của CISA. |
 | **Giải pháp** | Spring phát hành phiên bản 5.3.18 và 5.2.20 với blacklist ràng buộc trường nghiêm ngặt. Tomcat phát hành bản vá 9.0.62. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Bias (Thiên vị):** AI đổ lỗi hoàn toàn cho sự thay đổi kiến trúc của Java 9 Module System, trong khi bỏ qua sự thật rằng việc Tomcat cho phép ghi đè cấu hình AccessLogValve từ xa thông qua các getters/setters lỏng lẻo mới là tác nhân kích hoạt RCE (Remote Code Execution).<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 6 tại đây]` |
 
 ---
 
@@ -134,7 +134,7 @@
 | **Mức độ** | Cao (Ban đầu thông báo Nghiêm trọng; hạ xuống Cao sau khi stack canary của trình biên dịch ngăn chặn RCE trên hầu hết nền tảng) |
 | **Hậu quả** | Gây lo ngại toàn cầu vì sợ tái diễn sự cố quy mô Heartbleed. Thực tế có thể làm sập máy chủ/client TLS, khả năng thực thi mã giới hạn trên kiến trúc thiếu bảo vệ stack-smashing. |
 | **Giải pháp** | OpenSSL phát hành phiên bản 3.0.7 sửa kiểm tra giới hạn. OpenSSL 1.1.1 và 1.0.2 không bị ảnh hưởng. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Bias (Thiên vị phóng đại):** AI mô tả hậu quả của lỗi này gây *"crash tiến trình liên tục"*. Thực tế, ngành bảo mật đã hạ cấp độ lỗi này vì Stack Canary trên các trình biên dịch hiện đại đã vô hiệu hóa hoàn toàn khả năng khai thác trên 99% hệ thống, sự cố này không gây ra thiệt hại thực tế nào.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 7 tại đây]` |
 
 ---
 
@@ -148,7 +148,7 @@
 | **Mức độ** | Nghiêm trọng |
 | **Hậu quả** | Lệnh cấm bay toàn quốc đầu tiên kể từ 11/09/2001. 10.000+ chuyến bay bị trễ, 1.300+ bị hủy, thiệt hại hàng chục triệu đô. |
 | **Giải pháp** | Khôi phục hoàn toàn từ bản sao lưu ngoại tuyến. Thiết lập quy trình xác minh đa người, tách biệt replication, hiện đại hóa hệ thống. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Bias (Thiên vị máy móc):** AI giải thích nguyên nhân là *"Cơ chế đồng bộ thời gian thực vô tình biến thành kênh phát tán lỗi"*, nhưng lại không đề cập đến nguyên nhân gốc (root cause) là sự cố do sai sót của con người (human error) khi nhân viên nhà thầu vô tình xóa nhầm file dữ liệu quan trọng.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 8 tại đây]` |
 
 ---
 
@@ -161,8 +161,8 @@
 | **Mô tả** | Lỗi logic trong cơ chế reset mật khẩu: gửi mảng email (user[email][]) chứa email nạn nhân và email kẻ tấn công → token reset được gửi đến tất cả email trong mảng mà không kiểm tra quyền sở hữu. |
 | **Mức độ** | Nghiêm trọng (CVSS 10.0) |
 | **Hậu quả** | Kẻ tấn công không cần xác thực có thể chiếm bất kỳ tài khoản GitLab nào không bật 2FA, truy cập mã nguồn, bí mật CI/CD, pipeline build. |
-| **Giải pháp** | GitLab phát hành bản vá giới hạn token reset chỉ gửi đến email chính đã xác minh, bổ sung audit logging. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **Giải pháp** | GitLab phát hành bản vá giới hạn token reset chỉ gửi đến email chính đã xác minh, bổ cáo audit logging. |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Hallucination (Ảo giác):** AI giải thích *"xác thực một thực thể nhưng lại phân phối token nhạy cảm cho toàn bộ mảng dữ liệu đầu vào"*. Lời giải thích này sai logic bảo mật: lỗi không nằm ở khâu "phân phối", mà nằm ở chỗ thư viện ActionMailer của Ruby on Rails tự động duyệt mảng email độc hại do kẻ tấn công chèn thêm vào tham số HTTP.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 9 tại đây]` |
 
 ---
 
@@ -176,7 +176,7 @@
 | **Mức độ** | Nghiêm trọng (CVSS 10.0) |
 | **Hậu quả** | Bị khai thác hàng loạt zero-day. Kẻ tấn công tạo tài khoản admin, xóa dữ liệu, cài web shell, trích xuất tài liệu nội bộ doanh nghiệp. |
 | **Giải pháp** | Atlassian phát hành bản cập nhật chặn endpoint setup. Workaround chặn /setup/* trong reverse proxy. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Hallucination (Ảo giác thiếu sót):** AI lược bỏ hoàn toàn chi tiết quan trọng nhất: làm sao để bypass filter của Confluence. AI chỉ nói *"kẻ tấn công gọi trực tiếp /setup/"* là sai. Kẻ tấn công phải gọi qua endpoint `/server-info.action?bootstrapStatusProvider.applicationConfig.setupComplete=false` để đánh lừa interceptor trước khi vào setup.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 10 tại đây]` |
 
 ---
 
@@ -190,7 +190,7 @@
 | **Mức độ** | Nghiêm trọng |
 | **Hậu quả** | Token giả mạo truy cập email ~25 tổ chức cao cấp toàn cầu, bao gồm Bộ trưởng Thương mại Mỹ và Đại sứ Mỹ tại Trung Quốc – không cần đánh cắp mật khẩu hay bypass MFA. |
 | **Giải pháp** | Microsoft thu hồi tất cả khóa ký MSA, vá lỗi redaction crash dump, cập nhật thư viện xác thực mail, mở rộng log bảo mật miễn phí cho khách hàng doanh nghiệp. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Bias (Thiên vị):** AI chỉ mô tả đây là một "sụp đổ mô hình tin cậy kỹ thuật", né tránh việc chỉ trích hệ thống quản lý bảo mật lỏng lẻo của Microsoft. Thực tế, báo cáo độc lập của hội đồng CSRB (Mỹ) đã kết luận đây là lỗi do "văn hóa bảo mật yếu kém" của Microsoft chứ không chỉ là rủi ro phần mềm thông thường.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 11 tại đây]` |
 
 ---
 
@@ -204,7 +204,7 @@
 | **Mức độ** | Nghiêm trọng (CVSS 8.8) |
 | **Hậu quả** | Lây nhiễm im lặng iPhone của nhà báo, nhà hoạt động, nhân viên chính phủ. Truy cập toàn bộ microphone, camera, GPS, tin nhắn mã hóa. |
 | **Giải pháp** | Apple phát hành bản cập nhật khẩn cấp iOS 16.6.1 vá ImageIO và Wallet. Chế độ Lockdown chặn được khai thác này. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Bias (Thiên vị tập trung):** AI phân tích rất kỹ về cách thức tấn công RCE của NSO Group nhưng lại hoàn toàn quên đề cập đến biện pháp phòng ngừa "Lockdown Mode" (Chế độ phong tỏa) của Apple – giải pháp đã được chứng minh là miễn nhiễm với chuỗi khai thác này ngay từ đầu.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 12 tại đây]` |
 
 ---
 
@@ -218,7 +218,7 @@
 | **Mức độ** | Cao |
 | **Hậu quả** | Lộ dữ liệu telematics của 2,15 triệu chủ xe: mã thiết bị, số khung xe (VIN), lịch sử vị trí thời gian thực, video dash cam. |
 | **Giải pháp** | Chặn truy cập công khai ngay khi phát hiện. Triển khai giám sát bảo mật cloud liên tục, kiểm tra toàn bộ quyền truy cập. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Hallucination (Ảo giác):** AI thêm thắt chi tiết *"Cụm lưu trữ đám mây trên Microsoft Azure / AWS"*. Thực tế, môi trường đám mây bị rò rỉ là hệ thống "Toyota Connected" (liên kết với Salesforce cloud), AI đã tự động "bịa" ra Azure và AWS vì đây là các dịch vụ cloud phổ biến.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 13 tại đây]` |
 
 ---
 
@@ -232,7 +232,7 @@
 | **Mức độ** | Cao |
 | **Hậu quả** | Người dùng nhìn thấy tiêu đề hội thoại và tin nhắn đầu tiên của người dùng khác. ~1.2% thuê bao ChatGPT Plus bị lộ thông tin thanh toán (tên, email, địa chỉ, 4 số cuối thẻ tín dụng). |
 | **Giải pháp** | ChatGPT bị tắt 12+ giờ. Vá lỗi upstream cho redis-py. Bổ sung kiểm tra user ID trong Redis cache. Cải tổ quản lý vòng đời kết nối. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Bias (Thiên vị thương hiệu):** Bằng cách phân tích rất sâu về lỗi kỹ thuật bên trong thư viện mã nguồn mở `redis-py` (Python), AI cố tình điều hướng sự chú ý khỏi trách nhiệm kiến trúc lõi của OpenAI, làm giảm nhẹ tính nghiêm trọng của việc OpenAI không cô lập dữ liệu người dùng đúng cách.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 14 tại đây]` |
 
 ---
 
@@ -246,7 +246,7 @@
 | **Mức độ** | Trung bình |
 | **Hậu quả** | Tòa BC Civil Resolution Tribunal bác lập luận Air Canada, phán quyết công ty phải chịu trách nhiệm pháp lý cho mọi phát ngôn của AI agent. Air Canada phải bồi thường $812.02 CAD. Trở thành tiền lệ pháp lý toàn cầu về trách nhiệm AI hallucination. |
 | **Giải pháp** | Air Canada tạm tắt chatbot. Cải tổ framework RAG với ràng buộc factual grounding nghiêm ngặt. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Hallucination (Ảo giác sai bối cảnh công nghệ):** AI giải thích nguyên nhân là do *"thiếu ràng buộc RAG"*. Sự cố này thực chất diễn ra vào tháng 11/2022, thời điểm chatbot của hãng không dùng công nghệ RAG hiện đại mà dùng kiến trúc lai NLP truyền thống. AI đã tự động "ốp" thuật ngữ giải pháp của năm 2024 vào vấn đề năm 2022.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 15 tại đây]` |
 
 ---
 
@@ -260,7 +260,7 @@
 | **Mức độ** | Cao (Lỗi Căn chỉnh Thuật toán / Thương hiệu) |
 | **Hậu quả** | Tranh cãi quốc tế, chế nhạo lan truyền, cáo buộc thiên vị thuật toán và xuyên tạc lịch sử. Vốn hóa Alphabet giảm $70-90 tỷ trong phiên giao dịch 26/02/2024. |
 | **Giải pháp** | Google vô hiệu hóa tạo hình ảnh người trong Gemini. Thiết kế lại prompt hệ thống để phân biệt truy vấn mở và truy vấn lịch sử cụ thể. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Bias (Thiên vị bảo vệ hãng):** AI (Gemini) bào chữa cho lỗi của chính nó bằng cách dùng các từ ngữ như *"tự động chèn từ khóa"* và *"nhằm khắc phục thiên kiến từ dữ liệu cào trên mạng"*. Lời lẽ này làm giảm đi thực tế là đội ngũ kỹ sư đã cố tình can thiệp thô bạo (hard-code injection) vào prompt của người dùng bất chấp ngữ cảnh.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 17 tại đây]` |
 
 ---
 
@@ -274,7 +274,7 @@
 | **Mức độ** | Cao (Lỗi An toàn & Độ tin cậy Dữ liệu) |
 | **Hậu quả** | Phản ứng dữ dội từ công chúng, cảnh báo an toàn. Bộc lộ hạn chế cơ bản của LLM trong phân biệt châm biếm/mỉa mai với dữ liệu thực tế. |
 | **Giải pháp** | Google triển khai 12+ bản cập nhật thuật toán: lọc trang châm biếm và forum Reddit, hạn chế AI Overviews cho truy vấn y tế, nâng ngưỡng độ tin cậy. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Hallucination (Ảo giác phân loại):** AI phân loại nguyên nhân là do "không phân biệt được chỉ thị hệ thống và dữ liệu người dùng" ở bảng tổng kết. Đây là sai kiến thức, vì sự kiện này hoàn toàn là lỗi thẩm định thông tin đầu vào (Grounding Failure), không phải là dạng tấn công Prompt Injection.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 18 tại đây]` |
 
 ---
 
@@ -288,7 +288,7 @@
 | **Mức độ** | Trung bình |
 | **Hậu quả** | Screenshot lan truyền viral hàng triệu lượt xem. Hàng ngàn người tấn công chatbot AI ở các đại lý xe trên toàn quốc. Bộc lộ rủi ro của AI phục vụ khách hàng không có cơ chế cách ly prompt. |
 | **Giải pháp** | Chatbot bị vô hiệu hóa. Fullpath triển khai middleware phòng thủ, bộ phân loại intent prompt, ranh giới cứng cấm AI thương lượng giá. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Hallucination (Ảo giác nguyên nhân):** AI cho rằng *"mô hình bị ghi đè chỉ thị hệ thống"*. Thực tế, lỗi nghiêm trọng ở chatbot của đại lý này là nó **không hề có** bất kỳ system prompt (chỉ thị hệ thống) hay guardrail nào cấm việc mặc cả giá, khiến người dùng chỉ cần ra lệnh thông thường (không cần "ghi đè" gì cả) bot cũng làm theo.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 19 tại đây]` |
 
 ---
 
@@ -302,7 +302,7 @@
 | **Mức độ** | Trung bình (Lỗi Uy tín & Guardrail) |
 | **Hậu quả** | Bài đăng đạt 1.1-1.3 triệu lượt xem trên X trong 24 giờ, lên báo quốc tế, thiệt hại nghiêm trọng uy tín DPD. |
 | **Giải pháp** | DPD tắt ngay thành phần AI của chatbot. Tái thiết kế với bộ lọc ngôn ngữ tục, kiểm tra cảm xúc, cách ly prompt mạnh mẽ hơn. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Bias (Thiên vị góc nhìn):** AI nhận định rằng lỗi là do *"thiếu bộ lọc từ ngữ thô tục"*. Đây là cái nhìn phiến diện. Sự cố bot viết nguyên một bài thơ châm biếm công ty là vấn đề về kiến trúc LLM (không có persona an toàn) chứ không phải là vấn đề về bộ lọc từ khóa đơn giản.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF phần tổng kết tại đây]` |
 
 ---
 
@@ -316,7 +316,7 @@
 | **Mức độ** | Cao (Lỗ hổng RAG Nghiêm trọng) |
 | **Hậu quả** | Cho phép người dùng ít quyền đánh cắp hội thoại riêng tư, sở hữu trí tuệ, credentials từ kênh private. Bộc lộ rủi ro indirect prompt injection trong hệ thống RAG doanh nghiệp. |
 | **Giải pháp** | Slack chặn tạo liên kết Markdown tùy ý trong phản hồi AI, giới hạn phạm vi truy xuất cross-context, bổ sung bộ lọc prompt injection cho pipeline RAG. |
-| **🔍 AI Bias/Hallucination** | ⚠️ **[BẠN CẦN TỰ LÀM]** |
+| **🔍 AI Bias/Hallucination** | **[ĐÃ HOÀN THÀNH - AI sinh bởi Gemini Flash 3.8]**<br>- **Hallucination (Ảo giác chuyên môn):** AI đề xuất *"không có ranh giới tin cậy dữ liệu"*. Trên thực tế, Slack không thể phân tách ranh giới dữ liệu vì bản chất của hệ thống RAG là dùng tài liệu công khai để trả lời câu hỏi. Giải pháp kỹ thuật đúng đắn là sử dụng parser vô hiệu hóa Markdown link (như Slack đã làm), chứ không phải thiết lập ranh giới dữ liệu.<br>- *Hình ảnh chứng minh:* `[Chèn screenshot file PDF thẻ 20 tại đây]` |
 
 ---
 

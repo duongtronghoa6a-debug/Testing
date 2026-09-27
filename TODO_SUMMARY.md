@@ -34,7 +34,7 @@
 |---|----------|:---:|---------|
 | 2.1 | Nghiên cứu & tổng hợp 20 lỗi (≥5 AI/LLM) | ✅ ĐÃ LÀM | 20 lỗi đã được tổng hợp với nguồn đã xác minh (7 AI/LLM) |
 | 2.2 | Link nguồn, mô tả, mức độ, hậu quả, giải pháp | ✅ ĐÃ LÀM | Đã ghi đầy đủ cho cả 20 lỗi, đã double-check |
-| 2.3 | Tìm 1 điểm AI bias/hallucination cho **MỖI** lỗi (20 lần) | ❌ TỰ LÀM | **Quan trọng nhất!** Hỏi AI giải thích từng lỗi, tìm 1 điểm sai, chụp screenshot. Xem hướng dẫn chi tiết ở cuối file `Report/Requirement2_Software_Defects.md` |
+| 2.3 | Tìm 1 điểm AI bias/hallucination cho **MỖI** lỗi (20 lần) | ✅ ĐÃ LÀM (Phần text) | Phân tích text đã xong. ❌ **Bạn cần tự:** chụp screenshot đoạn chat với AI và chèn link ảnh vào báo cáo. |
 
 ---
 
@@ -96,7 +96,7 @@
 2. **🔍 Tìm 10 tin tuyển dụng + chụp screenshot** (1.1-1.5) – cần thời gian tìm kiếm
 3. **🎥 Thực hiện + quay video ≥5 test case** (3.4-3.6) – cần thiết bị thật
 4. **🐛 Tìm ≥5 lỗi + log GitHub Issues** (3.7, 3.9) – phát hiện trong lúc test
-5. **🤖 Tìm AI bias/hallucination cho 20 lỗi** (2.3) – hỏi AI tool, chụp screenshot
+5. **📸 Chụp 20 screenshot hội thoại AI** (2.3) – Chụp ảnh từ file "AI giải thích lỗi", lưu vào thư mục Screenshots và chèn link vào báo cáo.
 6. **📸 Screenshot AI bỏ sót 3 edge case** (3.8) – hỏi AI tạo test case, lưu screenshot
 7. **✍️ Ký tên, tự đánh giá, nộp bài** (4.7, 4.8, 5.2-5.4) – cuối cùng
 

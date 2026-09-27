@@ -37,3 +37,9 @@
 ---
 
 *[Các prompt bổ sung sẽ được ghi log khi phát sinh]*
+
+## Prompt #4 – Giải thích 20 lỗi phần mềm để tìm ảo giác AI
+**Thời gian:** 00:30 28/09/2026
+**Công cụ:** Gemini Flash 3.8
+**Nội dung prompt:**
+> " Hãy giải thích chi tiết về 20 sự cố/lỗ hổng phần mềm sau đây [danh sách 20 lỗi] để tôi có thể hiểu rõ bản chất kỹ thuật.\n

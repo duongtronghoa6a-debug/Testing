@@ -40,6 +40,16 @@
 | **(4) Lý do** | Theo ISTQB §4.4 về kỹ thuật dựa trên kinh nghiệm, edge case thường đến từ kiến thức miền và tương tác vật lý mà AI không có. AI thiếu đầu vào giác quan (sờ, nghe, ngửi) cần thiết cho kiểm thử sản phẩm vật lý (ISTQB §2.2.1). |
 | **(5) Sinh viên sửa** | Bổ sung 3 edge case AI bỏ sót: (1) TC-13: Quạt hoạt động khi lồng bảo vệ bị lỏng; (2) TC-14: Tiếng ồn bất thường khi đổi chiều xoay; (3) TC-15: Phục hồi sau mất điện/chập điện. Có screenshot hội thoại AI chứng minh AI không tạo được. |
 
+## Artifact 4: Phân tích Ảo giác/Thiên vị của 20 Lỗi phần mềm
+
+| Mục | Nội dung |
+|-----|---------|
+| **(1) Prompt + Công cụ** | **Prompt:** "Hãy giải thích chi tiết về 20 sự cố/lỗ hổng phần mềm..."<br/>**Công cụ:** Gemini Flash 3.8<br/>**Thời gian:** 00:30 28/09/2026 |
+| **(2) Đầu ra AI** | Xem `AI giải thích lỗi.pdf` – chi tiết giải thích cho 20 lỗi. |
+| **(3) Đánh giá** | **CHƯA ĐẦY ĐỦ / KHÔNG HỢP LỆ** – AI đưa ra một số thông tin sai sự thật hoặc giải thích mang tính thiên vị. |
+| **(4) Lý do** | AI mắc các lỗi đặc trưng như hallucination (bịa đặt thông tin không có thực như "chỉ commit vào tarball thay vì git", "Toyota Cloud dùng Azure/AWS") và bias (thiên vị phân tích kỹ thuật thay vì đánh giá sai sót quy trình hoặc người dùng). |
+| **(5) Sinh viên sửa** | Trích xuất 20 điểm ảo giác/thiên vị từ file PDF và ghi nhận chi tiết vào phần "AI Bias/Hallucination" của từng lỗi trong `Report/Requirement2_Software_Defects.md`. |
+
 ---
 
 ## Tóm tắt Độ chính xác AI
@@ -48,7 +58,7 @@
 |-----------|:---:|:---:|
 | HỢP LỆ | 0 | 0% |
 | KHÔNG HỢP LỆ | 0 | 0% |
-| CHƯA ĐẦY ĐỦ | 3 | 100% |
+| CHƯA ĐẦY ĐỦ | 4 | 100% |
 
 ### Kết luận: Khi nào nên/không nên dùng AI?
 
